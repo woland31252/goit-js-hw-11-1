@@ -1,0 +1,8 @@
+@import './gallery.scss';
+@import './reset.scss';
+@import './search.scss';
+@import './vars.scss';
+
+body {
+    background-color: var(--main-color);
+}
