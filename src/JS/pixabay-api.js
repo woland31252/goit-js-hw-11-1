@@ -12,7 +12,7 @@ export default class ImageApiService {
   getImage() {
     const URL = `${ENDPOINT}?key=${KEY}&q=${this.search}&page=${this.page}&${param}`;
     const response = axios.get(URL)
-      response.then();
+
     // this.nextPage();
 
     return response.data;
