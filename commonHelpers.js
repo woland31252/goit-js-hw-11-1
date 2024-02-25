@@ -20,5 +20,5 @@ import{a as l,S as f}from"./assets/vendor-3cfff7f0.js";(function(){const r=docum
     </p>
   </div>
   </a>
-</div>`}const h=document.getElementById("search-form"),c=document.querySelector(".gallery"),a=new m;h.addEventListener("submit",y);function y(t){t.preventDefault();const r=t.target,s=r.elements.searchQuery.value.trim();a.search=s,s!==""&&(a.resetPage(),$(),b().finally(()=>r.reset()))}async function b(){try{const r=(await a.getImage()).hits;if(r.length===0)throw new Error("Data not found.");const s=r.reduce((n,e)=>g(e)+n,"");L(s)}catch(t){v(t)}}function L(t){c.insertAdjacentHTML("beforeend",t),w.refresh()}function $(){c.innerHTML=""}function v(t){console.error(t)}const w=new f(".gallery a");
+</div>`}const h=document.getElementById("search-form"),a=document.querySelector(".gallery"),c=new m;h.addEventListener("submit",y);function y(t){t.preventDefault();const r=t.target,s=r.elements.searchQuery.value.trim();c.search=s,s!==""&&(c.resetPage(),$(),b(),r.reset())}function b(){try{const r=c.getImage().hits;if(r.length===0)throw new Error("Data not found.");const s=r.reduce((n,e)=>g(e)+n,"");L(s)}catch(t){v(t)}}function L(t){a.insertAdjacentHTML("beforeend",t),w.refresh()}function $(){a.innerHTML=""}function v(t){console.error(t)}const w=new f(".gallery a");
 //# sourceMappingURL=commonHelpers.js.map
