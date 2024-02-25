@@ -4,6 +4,11 @@ const KEY = '33796051-1e422d07d8c9fc912bc2a7eb4';
 const param =
   'per_page=40&image_type=photo&orientation=horyzontal&safesearch=true';
 
+const search = '';
+
+function fetchGetImg() {
+  fetch ()
+}
 export default class ImageApiService {
   constructor() {
     this.page = 1;
