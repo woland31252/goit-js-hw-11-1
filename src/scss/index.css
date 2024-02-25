@@ -1,18 +1,18 @@
 .gallery {
-  padding: 15px;
-  gap: 15px;
+  gap: 24px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0 150px;
 }
 
 .photo-card {
   overflow: hidden;
   background-color: var(--card-color);
-  border-radius: 4px;
-  flex: 0 1 calc(25% - 15px);
+  border: 1px solid #808080;
+  flex: 0 1 calc(33.3333333333% - 24px);
   width: 100%;
-  height: 250px;
+  height: 200px;
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -35,13 +35,13 @@ img {
 
 .info {
   position: absolute;
-  bottom: 0px;
+  bottom: 30px;
   right: 0px;
   display: flex;
   justify-content: space-between;
   padding: 3px 5px;
   width: 100%;
-  height: 39px;
+  height: 48px;
   background-color: var(--card-color);
 }
 
@@ -49,6 +49,10 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 0.75;
+  gap: 10px;
 }
 
 /* Reset styles */
@@ -90,28 +94,29 @@ img {
 .search-form {
   display: flex;
   justify-content: center;
-  padding: 4px 0;
-  background-color: var(--search-bacgr);
-  position: relative;
+  gap: 10px;
+  margin-bottom: 36px;
 }
 
 input {
-  width: 300px;
-  height: 42px;
-  border-radius: 5px;
-  border: 3px solid var(--button-color);
-  padding: 5px 10px;
+  width: 238px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  padding: 8px 16px;
   font-size: var(--font-input);
+  font-weight: 400;
+  line-height: 0.7;
   outline: none;
 }
 
+input :focus-visible {
+  border-color: var(--button-color);
+}
+
 .search-form > button {
-  border-radius: 0 5px 5px 0;
-  position: absolute;
-  top: 4px;
-  right: 482px;
-  width: 42px;
-  height: 42px;
+  border-radius: 8px;
+  width: 91px;
+  padding: 8px 16px;
   border: none;
   background: var(--button-color);
 }
@@ -127,33 +132,37 @@ input {
 .search-form:hover button {
   background: var(--accent-color);
 }
-.search-form:hover .material-symbols-outlined {
+.search-form:hover .button-title {
   color: var(--accent-fonts-color);
 }
 .search-form:hover input {
-  border-color: var(--accent-color);
+  border-color: var(--accent-color-input);
 }
 
-.material-symbols-outlined {
+.button-title {
   color: var(--font-btncolor);
-  font-size: 28px;
-  padding-top: 2px;
+  font-size: var(--font-input);
+  font-weight: 500;
+  line-height: 0.7;
 }
 
 :root {
-  --accent-color: #2cb3e4;
+  --accent-color: #6C8CFF;
+  --accent-color-input: #000000;
   --accent-fonts-color: darkolivegreen;
-  --button-color: blue;
-  --card-color: #e6ecb4;
+  --button-color: #4E75FF;
+  --card-color: #FFFFFF;
   --disabled-btncolor: #c1c1c1;
   --font-btncolor: #FFFFFF;
-  --font-input: 24px;
+  --font-input: 16px;
   --font-loadmore-btn: 30px;
   --font-search-btn: 18px;
-  --main-color: #dad5d5;
+  --main-color: #FFFFFF;
   --search-bacgr: hwb(207 14% 14%);
 }
 
 body {
   background-color: var(--main-color);
+  margin: 36px auto;
+  width: 1440px;
 }/*# sourceMappingURL=index.css.map */

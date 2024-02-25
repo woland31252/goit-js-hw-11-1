@@ -1,29 +1,30 @@
 .search-form {
     display: flex;
     justify-content: center;
-    // padding: 4px 0;
-    // background-color: var(--search-bacgr);
-    // position: relative;
+    gap: 10px;
+    margin-bottom: 36px;
 }
 
 input {
-    width: 272px;
-    height: 40px;
+    width: 238px;
     border-radius: 4px;
     border: 1px solid #808080;
-    padding: 5px 10px;
+    padding: 8px 16px;
     font-size: var(--font-input);
+    font-weight: 400;
+    line-height: 0.7;
     outline: none;
+}
+
+input :focus-visible {
+    border-color: var(--button-color)
 }
 
 
 .search-form>button {
-    border-radius: 0 5px 5px 0;
-    position: absolute;
-    top: 4px;
-    right: 482px;
-    width: 42px;
-    height: 42px;
+    border-radius: 8px;
+    width: 91px;
+    padding: 8px 16px;
     border: none;
     background: var(--button-color);
 }
@@ -42,17 +43,18 @@ input {
         background: var(--accent-color);
     }
 
-    & .material-symbols-outlined {
+    & .button-title {
         color: var(--accent-fonts-color);
     }
 
     & input {
-        border-color: var(--accent-color);
+        border-color: var(--accent-color-input);
     }
 }
 
-.material-symbols-outlined {
+.button-title {
     color: var(--font-btncolor);
-    font-size: 28px;
-    padding-top: 2px;
+    font-size: var(--font-input);
+    font-weight: 500;
+    line-height: 0.7;
 }
