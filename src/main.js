@@ -37,13 +37,14 @@ function onSubmit(event) {
   imageApiService.resetPage();
   clearList();
 //   loadMoreBtn.show();
-  fetchHits().finally(() => form.reset());
+  fetchHits()
+  form.reset();
 }
 
-async function fetchHits() {
+function fetchHits() {
 //   loadMoreBtn.disable();
   try {
-    const data = await imageApiService.getImage();
+    const data = imageApiService.getImage();
     const hits = data.hits;
     if (hits.length === 0) {
       throw new Error('Data not found.');
