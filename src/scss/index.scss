@@ -2,10 +2,11 @@
 @import './reset.scss';
 @import './search.scss';
 @import './vars.scss';
+@import './loader.scss';
 
 body {
     background-color: var(--main-color);
-    margin: 36px auto;
+    margin: 36px 0;
     width: 1440px;
     font-family: montserrat;
 }

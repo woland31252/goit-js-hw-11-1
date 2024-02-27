@@ -9,6 +9,7 @@ import createMarkup from './JS/render-functions.js';
 
 const form = document.getElementById('search-form');
 const gallery = document.querySelector('.gallery');
+const loader = document.querySelector('.loader');
 
 
 form.addEventListener('submit', onSubmit);
@@ -16,11 +17,13 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(event) {
   event.preventDefault();
+  loader.classList.remove('is-hidden');
   let inputValue = '';
   const form = event.target;
   console.log(form)
   inputValue = form.elements.searchQuery.value.trim();
   if (inputValue === '') {
+    loader.classList.add('is-hidden');
     iziToast.info({
       messageSize: '16px',
       messageLineHeight: '24px',
@@ -36,7 +39,10 @@ function onSubmit(event) {
   ImageApiService(inputValue)
     .then(elem => fetchHits(elem))
     .catch(err => onError(err))
-    .finally(() => form.reset());
+    .finally(() => {
+      form.reset()
+      loader.classList.add('is-hidden');
+    });
   clearList();
 }
 
@@ -44,6 +50,7 @@ function fetchHits(elem) {
 
     const hits = elem.hits;
   if (hits.length === 0) {
+    loader.classList.add('is-hidden');
       iziToast.info({
         messageSize: '16px',
         messageLineHeight: '24px',
@@ -75,6 +82,7 @@ function clearList() {
 }
 
 function onError(err) {
+  loader.classList.add('is-hidden');
   console.error(err);
 }
 
