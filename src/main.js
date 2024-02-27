@@ -22,11 +22,14 @@ function onSubmit(event) {
   inputValue = form.elements.searchQuery.value.trim();
   if (inputValue === '') {
     iziToast.info({
-      title: 'Warning',
-      message: 'Please formulate a request',
+      messageSize: '16px',
+      messageLineHeight: '24px',
+      messageColor: '#FFFFFF',
+      maxWidth: '432px',
+      backgroundColor: 'red',
       position: 'topRight',
-      titleColor: 'blue',
       titleSize: '24px',
+      message: 'Please formulate a request',
     });
     return;
   }
@@ -40,14 +43,17 @@ function onSubmit(event) {
 function fetchHits(elem) {
 
     const hits = elem.hits;
-    if (hits.length === 0) {
-      iziToast.warning({
-        title: 'Failure',
-        titleColor: 'red',
+  if (hits.length === 0) {
+      iziToast.info({
+        messageSize: '16px',
+        messageLineHeight: '24px',
+        messageColor: '#FFFFFF',
+        maxWidth: '432px',
+        backgroundColor: 'red',
+        position: 'topRight',
         titleSize: '24px',
         message:
           'Sorry, there are no images matching your search query. Please try again!',
-        position: 'topRight',
       });
       return
     } else {

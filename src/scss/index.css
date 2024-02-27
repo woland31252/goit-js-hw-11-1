@@ -7,6 +7,7 @@
 }
 
 .photo-card {
+  position: relative;
   overflow: hidden;
   background-color: var(--card-color);
   border: 1px solid #808080;
@@ -18,17 +19,11 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.gallery__link {
-  position: relative;
-}
-
 .photo-card:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 img {
-  width: 100%;
-  max-height: 200px;
   -o-object-fit: none;
      object-fit: none;
 }
@@ -39,9 +34,10 @@ img {
   right: 0px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 3px 5px;
   width: 100%;
-  height: auto;
+  height: 48px;
   background-color: var(--card-color);
 }
 
@@ -115,8 +111,13 @@ input {
   outline: none;
 }
 
-input :focus-visible {
+input:focus {
   border-color: var(--button-color);
+  border-width: 2px;
+}
+
+input:hover {
+  border-color: var(--accent-color-input);
 }
 
 .search-form > button {
@@ -127,22 +128,11 @@ input :focus-visible {
   background: var(--button-color);
 }
 
-/* .search-form > button:hover {
-     background: var(--accent-color);
- }
-
-
- .search-form>input:hover {
-    border-color: var(--accent-color);
-} */
-.search-form:hover button {
+button:hover {
   background: var(--accent-color);
 }
-.search-form:hover .button-title {
+button:hover .button-title {
   color: var(--accent-fonts-color);
-}
-.search-form:hover input {
-  border-color: var(--accent-color-input);
 }
 
 .button-title {
@@ -171,4 +161,5 @@ body {
   background-color: var(--main-color);
   margin: 36px auto;
   width: 1440px;
+  font-family: montserrat;
 }/*# sourceMappingURL=index.css.map */

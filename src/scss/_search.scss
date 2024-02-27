@@ -16,8 +16,13 @@ input {
     outline: none;
 }
 
-input :focus-visible {
-    border-color: var(--button-color)
+input:focus {
+    border-color: var(--button-color);
+    border-width: 2px;
+}
+
+input:hover {
+    border-color: var(--accent-color-input);
 }
 
 
@@ -29,27 +34,12 @@ input :focus-visible {
     background: var(--button-color);
 }
 
-/* .search-form > button:hover {
-     background: var(--accent-color);
- }
 
-
- .search-form>input:hover {
-    border-color: var(--accent-color);
-} */
-
-.search-form:hover {
-    & button {
-        background: var(--accent-color);
-    }
-
+button:hover {
+    background: var(--accent-color);
     & .button-title {
         color: var(--accent-fonts-color);
-    }
-
-    & input {
-        border-color: var(--accent-color-input);
-    }
+    } 
 }
 
 .button-title {
